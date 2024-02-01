@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "HighLowGame.Infrastructure/1.0.0": {
+        "dependencies": {
+          "HighLowGame.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HighLowGame.Infrastructure.dll": {}
+        }
+      },
+      "HighLowGame.Domain/1.0.0": {
+        "runtime": {
+          "HighLowGame.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "HighLowGame.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HighLowGame.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

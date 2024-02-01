@@ -1,0 +1,6 @@
+@HighLowGame.API_HostAddress = http://localhost:5057
+
+GET {{HighLowGame.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
