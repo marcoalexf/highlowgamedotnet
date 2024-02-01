@@ -27,19 +27,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/marcofrancisco/.nuget/packages/": {}
+    "C:\\Users\\marco\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/marcofrancisco/Documents/personal/HighLowGame.Infrastructure/HighLowGame.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\marco\\Desktop\\HighLowGame\\HighLowGame.Infrastructure\\HighLowGame.Infrastructure.csproj",
       "projectName": "HighLowGame.Infrastructure",
-      "projectPath": "/Users/marcofrancisco/Documents/personal/HighLowGame.Infrastructure/HighLowGame.Infrastructure.csproj",
-      "packagesPath": "/Users/marcofrancisco/.nuget/packages/",
-      "outputPath": "/Users/marcofrancisco/Documents/personal/HighLowGame.Infrastructure/obj/",
+      "projectPath": "C:\\Users\\marco\\Desktop\\HighLowGame\\HighLowGame.Infrastructure\\HighLowGame.Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\marco\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\marco\\Desktop\\HighLowGame\\HighLowGame.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/marcofrancisco/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\marco\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -51,8 +51,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/marcofrancisco/Documents/personal/HighLowGame.Domain/HighLowGame.Domain.csproj": {
-              "projectPath": "/Users/marcofrancisco/Documents/personal/HighLowGame.Domain/HighLowGame.Domain.csproj"
+            "C:\\Users\\marco\\Desktop\\HighLowGame\\HighLowGame.Domain\\HighLowGame.Domain.csproj": {
+              "projectPath": "C:\\Users\\marco\\Desktop\\HighLowGame\\HighLowGame.Domain\\HighLowGame.Domain.csproj"
             }
           }
         }
@@ -85,7 +85,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/Users/marcofrancisco/.dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\marco\\.dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

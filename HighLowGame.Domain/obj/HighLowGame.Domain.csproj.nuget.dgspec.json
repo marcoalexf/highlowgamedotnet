@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/marcofrancisco/Documents/personal/HighLowGame.Domain/HighLowGame.Domain.csproj": {}
+    "C:\\Users\\marco\\Desktop\\HighLowGame\\HighLowGame.Domain\\HighLowGame.Domain.csproj": {}
   },
   "projects": {
-    "/Users/marcofrancisco/Documents/personal/HighLowGame.Domain/HighLowGame.Domain.csproj": {
+    "C:\\Users\\marco\\Desktop\\HighLowGame\\HighLowGame.Domain\\HighLowGame.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/marcofrancisco/Documents/personal/HighLowGame.Domain/HighLowGame.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\marco\\Desktop\\HighLowGame\\HighLowGame.Domain\\HighLowGame.Domain.csproj",
         "projectName": "HighLowGame.Domain",
-        "projectPath": "/Users/marcofrancisco/Documents/personal/HighLowGame.Domain/HighLowGame.Domain.csproj",
-        "packagesPath": "/Users/marcofrancisco/.nuget/packages/",
-        "outputPath": "/Users/marcofrancisco/Documents/personal/HighLowGame.Domain/obj/",
+        "projectPath": "C:\\Users\\marco\\Desktop\\HighLowGame\\HighLowGame.Domain\\HighLowGame.Domain.csproj",
+        "packagesPath": "C:\\Users\\marco\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\marco\\Desktop\\HighLowGame\\HighLowGame.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/marcofrancisco/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\marco\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -53,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/marcofrancisco/.dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\marco\\.dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

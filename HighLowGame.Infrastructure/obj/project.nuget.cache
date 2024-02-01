@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BKwSokv0C1nfCxw5e5vl4I0KPnj+hOS+FysXyfwfmPJYDr2IajlliHwsPHRungj7vBh32Y/1v4FycYn7LJla9w==",
+  "dgSpecHash": "yV+hrmIVgoMh5NHDRLKMKrEBBQWe0rOb7eUI8OCmw5fai8nQ0UMBR/AppA1TDyvXK9gYS+qJ5/oSOt5EjQNoWg==",
   "success": true,
-  "projectFilePath": "/Users/marcofrancisco/Documents/personal/HighLowGame.Infrastructure/HighLowGame.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\marco\\Desktop\\HighLowGame\\HighLowGame.Infrastructure\\HighLowGame.Infrastructure.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
