@@ -3,10 +3,11 @@ using HighLowGame.Application.Commands;
 using HighLowGame.Application.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace HighLowGame.API.Controllers;
 
-[Route("[controller]/[action]")]
+[Route("api/[controller]")]
 public class HighLowGameController : Controller
 {
     private readonly IMediator _mediator;
@@ -15,7 +16,9 @@ public class HighLowGameController : Controller
         this._mediator = mediator ?? throw new ArgumentException("Mediator not present in IOC container");
     }
     
-    [HttpPost("/start")]
+    [HttpPost("start")]
+    [ProducesResponseType(typeof(StartGameRequestResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> StartGame(StartGameRequestDto startGameRequestDto)
     {
         var command = new StartGameRequestCommand
@@ -27,7 +30,9 @@ public class HighLowGameController : Controller
         return new OkObjectResult(result);
     }
 
-    [HttpPost("/move")]
+    [HttpPost("move")]
+    [ProducesResponseType(typeof(MakeMoveCommandRequestResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> MakeMove(MakeMoveGameRequestDto makeMoveGameRequestDto)
     {
         var command = new MakeMoveRequestCommand
@@ -40,7 +45,9 @@ public class HighLowGameController : Controller
         return new OkResult();
     }
 
-    [HttpGet("/{id}/info")]
+    [HttpGet("{id}/info")]
+    [ProducesResponseType(typeof(GetGameInfoQueryResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetGameInfo(string id)
     {
         var query = new GetGameInfoQuery
