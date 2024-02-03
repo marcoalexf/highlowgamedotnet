@@ -32,6 +32,16 @@ public class GameSession : IEntity
         this.PlayerTwoScore = score;
     }
 
+    public void SetGameFinished(bool finished) 
+    { 
+        this.IsFinished = finished;
+    }
+
+    public void SetGameFinishedReason(GameEndReason reason)
+    {
+        this.GameEndReason = reason;
+    }
+
     public void FinishGame(GameEndReason? reason)
     {
         this.IsFinished = true;

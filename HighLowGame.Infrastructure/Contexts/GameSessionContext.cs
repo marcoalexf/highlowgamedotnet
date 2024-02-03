@@ -9,6 +9,18 @@ namespace HighLowGame.Infrastructure.Contexts
         : base(options) { }
 
         public DbSet<GameSession> GameSessions { get; set; }
+
+        public async Task<HighLowGame.Domain.Aggregates.GameAggregate.GameSession> GetGameSessionById(Guid id)
+        {
+            var gameSessionEntity = await this.GameSessions.SingleAsync(p => p.Id == id);
+            var gameSession = new Domain.Aggregates.GameAggregate.GameSession(gameSessionEntity.PlayerOneId, gameSessionEntity.PlayerTwoId);
+            gameSession.SetPlayerOneScore(gameSessionEntity.PlayerOneScore);
+            gameSession.SetPlayerTwoScore(gameSessionEntity.PlayerTwoScore);
+            gameSession.SetGameFinished(gameSessionEntity.IsFinished);
+            gameSession.SetGameFinishedReason(gameSessionEntity.GameEndReason);
+            return gameSession;
+        }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<GameSession>().HasKey(x => x.Id);

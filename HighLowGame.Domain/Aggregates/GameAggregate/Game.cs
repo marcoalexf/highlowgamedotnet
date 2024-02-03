@@ -28,4 +28,10 @@ public class Game : IEntity
     {
         this.PlayerMoves.Add(playerMove);
     }
+
+    public void FinishGame()
+    {
+        // Just gonna assume there is only 1 game session to speedrun this
+        this.GameSessions.First().FinishGame(null);
+    }
 }
