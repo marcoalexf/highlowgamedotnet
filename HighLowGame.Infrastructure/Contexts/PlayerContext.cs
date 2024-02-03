@@ -5,10 +5,11 @@ namespace HighLowGame.Infrastructure.Contexts
 {
     public class PlayerContext : DbContext
     {
+        public PlayerContext() { }
         public PlayerContext(DbContextOptions<PlayerContext> options)
         : base(options) { }
 
-        public DbSet<Player> Players { get; set; }
+        public virtual DbSet<Player> Players { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<Player>().HasKey(x => x.Id);

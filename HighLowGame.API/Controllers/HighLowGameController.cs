@@ -58,4 +58,18 @@ public class HighLowGameController : Controller
 
         return new OkObjectResult(result);
     }
+
+    [HttpPost("{id}/finish")]
+    [ProducesResponseType(typeof(GetGameInfoQueryResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> FinishGame(string id)
+    {
+        var command = new FinishGameRequestCommand
+        {
+            GameId = id
+        };
+        var result = await this._mediator.Send(command);
+
+        return new OkObjectResult(result);
+    }
 }

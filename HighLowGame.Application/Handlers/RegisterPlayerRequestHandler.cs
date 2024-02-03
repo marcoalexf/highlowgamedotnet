@@ -2,6 +2,9 @@
 using HighLowGame.Infrastructure.Contexts;
 using HighLowGame.Infrastructure.Entities;
 using MediatR;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
+using System.Numerics;
+using System.Threading;
 
 namespace HighLowGame.Application.Handlers
 {
@@ -34,7 +37,6 @@ namespace HighLowGame.Application.Handlers
                     Message = $"Something went wrong while adding player with username {request.Username} to the database: {nameof(OperationCanceledException)}"
                 };
             }
-
             response.PlayerId = entityToAdd.Id;
 
             return response;
