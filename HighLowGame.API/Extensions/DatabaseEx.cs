@@ -18,6 +18,7 @@ namespace HighLowGame.API.Extensions
         {
             collection.AddDbContext<GameSessionContext>(options => options.UseSqlite("name=ConnectionSqlite:SqliteConnectionString"));
             collection.AddDbContext<PlayerContext>(options => options.UseSqlite("name=ConnectionSqlite:SqliteConnectionString"));
+            collection.AddDbContext<GameContext>(options => options.UseSqlite("name=ConnectionSqlite:SqliteConnectionString"));
 
             return collection;
         }

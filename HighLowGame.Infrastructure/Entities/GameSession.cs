@@ -8,5 +8,8 @@
         public int PlayerOneScore { get; set; }
         public int PlayerTwoScore { get; set; }
         public bool IsFinished { get; set; }
+
+        public Guid? GameId { get; set; }
+        public Game? Game { get; set; }
     }
 }
