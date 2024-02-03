@@ -13,5 +13,13 @@ namespace HighLowGame.API.Extensions
             );
             return collection;
         }
+
+        public static IServiceCollection AddDbContexts(this IServiceCollection collection, ConfigurationManager configuration)
+        {
+            collection.AddDbContext<GameSessionContext>(options => options.UseSqlite("name=ConnectionSqlite:SqliteConnectionString"));
+            collection.AddDbContext<PlayerContext>(options => options.UseSqlite("name=ConnectionSqlite:SqliteConnectionString"));
+
+            return collection;
+        }
     }
 }
