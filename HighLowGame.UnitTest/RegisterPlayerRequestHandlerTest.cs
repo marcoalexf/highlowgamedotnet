@@ -8,7 +8,7 @@ using Moq;
 
 namespace HighLowGame.UnitTest
 {
-    public class Tests
+    public class AddPlayerRequestHanlderTests
     {
         [Test]
         public async Task ShouldReturnUserIdByRegisteringUserCorrectly()

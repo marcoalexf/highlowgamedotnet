@@ -28,13 +28,13 @@ namespace HighLowGame.Application.Handlers
             try
             {
                 entityToAdd = await _playerContext.AddAsync(entityToAdd);
-            } catch (OperationCanceledException)
+            } catch (Exception)
             {
                 response.Error = new Errors.Error
                 {
                     // better error handling for different cases, for now sufices
                     StatusCode = System.Net.HttpStatusCode.BadRequest,
-                    Message = $"Something went wrong while adding player with username {request.Username} to the database: {nameof(OperationCanceledException)}"
+                    Message = $"Something went wrong while adding player with username {request.Username} to the database"
                 };
             }
             response.PlayerId = entityToAdd.Id;
