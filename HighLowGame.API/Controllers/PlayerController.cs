@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HighLowGame.API.Controllers;
 
-[Route("[controller]/[action]")]
+[Route("api/[controller]")]
 public class PlayerController : Controller
 {
     private readonly IMediator _mediator;
@@ -15,7 +15,9 @@ public class PlayerController : Controller
         this._mediator = mediator ?? throw new ArgumentException("Mediator not present in IOC container.");
     }
     
-    [HttpPost("/register")]
+    [HttpPost("register")]
+    [ProducesResponseType(typeof(RegisterPlayerRequestResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> RegisterPlayer(RegisterPlayerRequestDto playerRequestDto)
     {
         var command = new RegisterPlayerRequestCommand()
@@ -26,7 +28,9 @@ public class PlayerController : Controller
         return new OkResult();
     }
 
-    [HttpPost("/{id}/info")]
+    [HttpPost("{id}/info")]
+    [ProducesResponseType(typeof(PlayerInfoQueryResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetPlayerInfo(string id)
     {
         var query = new GetPlayerInfoQuery

@@ -1,6 +1,8 @@
+using HighLowGame.Domain.Interfaces;
+
 namespace HighLowGame.Domain.Aggregates.GameAggregate;
 
-public class GameSession
+public class GameSession : IEntity
 {
     public Guid Id { get; private set; }
     public Guid PlayerOneId { get; private set; }
@@ -28,6 +30,16 @@ public class GameSession
     public void SetPlayerTwoScore(int score)
     {
         this.PlayerTwoScore = score;
+    }
+
+    public void SetGameFinished(bool finished) 
+    { 
+        this.IsFinished = finished;
+    }
+
+    public void SetGameFinishedReason(GameEndReason reason)
+    {
+        this.GameEndReason = reason;
     }
 
     public void FinishGame(GameEndReason? reason)

@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HighLowGame.Domain", "HighL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HighLowGame.Infrastructure", "HighLowGame.Infrastructure\HighLowGame.Infrastructure.csproj", "{099F08E6-39C4-4D19-9451-4A7808DA2E40}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HighLowGame.UnitTest", "HighLowGame.UnitTest\HighLowGame.UnitTest.csproj", "{AF251B05-EEED-4FBA-9FF5-1DD48CB5EE34}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{099F08E6-39C4-4D19-9451-4A7808DA2E40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{099F08E6-39C4-4D19-9451-4A7808DA2E40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{099F08E6-39C4-4D19-9451-4A7808DA2E40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF251B05-EEED-4FBA-9FF5-1DD48CB5EE34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF251B05-EEED-4FBA-9FF5-1DD48CB5EE34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF251B05-EEED-4FBA-9FF5-1DD48CB5EE34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF251B05-EEED-4FBA-9FF5-1DD48CB5EE34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
