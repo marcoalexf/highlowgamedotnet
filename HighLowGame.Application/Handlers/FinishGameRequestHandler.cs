@@ -17,40 +17,34 @@ namespace HighLowGame.Application.Handlers
         }
         public async Task<bool> Handle(FinishGameRequestCommand request, CancellationToken cancellationToken)
         {
-            // Code below is experimental. Never shared a transaction between different contexts. According to Dr.Google this might be possible if the DB shares a single connection. No time to implemment.
-            using var gameTransaction = _gameContext.Database.BeginTransaction();
-            var game = await _gameContext.Games.SingleAsync(p => p.Id.Equals(request.GameId));
-            // Assuming only one session for now..
-            var gameSessionEntity = game.GameSession.First();
-            var gameSession = await _gameSessionContext.GetGameSessionById(gameSessionEntity.Id);
-            try
+            if (!Guid.TryParse(request.GameId, out Guid gameId))
             {
-                using var gameSessionTransaction = _gameContext.Database.BeginTransaction();
-                {
-                    try
-                    {
-                        gameSession.FinishGame(null);
-                        game.GameSession.Remove(gameSessionEntity);
-                        game.GameSession.Add(gameSessionEntity);
-                        _gameSessionContext.Update(gameSessionEntity);
-                        _gameSessionContext.SaveChanges();
-                    }
-                    catch (Exception ex)
-                    {
-                        // Better error handling
-                        return false;
-                    }
-                }
-
-                _gameContext.Update(gameSession);
-                _gameContext.SaveChanges();
-                gameTransaction.Commit();
+                throw new ArgumentException("Not a valid Guid");
             }
-            catch (Exception ex)
+
+            var game = await _gameContext.GetAsync(gameId);
+
+            if (game is null)
             {
-                // Better error handling
                 return false;
             }
+
+            // Assuming only one session for now..
+            var gameSessionEntity = await _gameSessionContext.GetAsync(game.GameSession.First().Id);
+            var gameSession = new Domain.Aggregates.GameAggregate.GameSession(gameSessionEntity.PlayerOneId, gameSessionEntity.PlayerTwoId);
+
+
+            gameSession.SetPlayerOneScore(gameSessionEntity.PlayerOneScore);
+            gameSession.SetPlayerTwoScore(gameSessionEntity.PlayerTwoScore);
+            gameSession.SetGameFinished(gameSessionEntity.IsFinished);
+            gameSession.SetGameFinishedReason(gameSessionEntity.GameEndReason);
+
+            gameSession.FinishGame(null);
+            game.GameSession.Remove(gameSessionEntity);
+            game.GameSession.Add(gameSessionEntity);
+            var updatedGameSession = await _gameSessionContext.UpdateAsync(gameSessionEntity);
+
+            var updatedGame = _gameContext.UpdateAsync(game);
 
             // Error handling... TODO: Improve!!
             return true;

@@ -27,7 +27,7 @@ namespace HighLowGame.Application.Handlers
                 
             try
             {
-                await _playerContext.AddAsync(entityToAdd, cancellationToken);
+                entityToAdd = await _playerContext.AddAsync(entityToAdd);
             } catch (OperationCanceledException)
             {
                 response.Error = new Errors.Error

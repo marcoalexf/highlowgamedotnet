@@ -26,10 +26,10 @@ namespace HighLowGame.UnitTest
                 mockPlayer
             };
 
-            var mockSet = new Mock<DbSet<Player>>();
+            var mockSet = new Mock<List<Player>>();
 
             var mockContext = new Mock<PlayerContext>();
-            mockContext.Setup(m => m.Players).Returns(mockSet.Object);
+            mockContext.Setup(m => m.AddAsync(It.IsAny<Player>())).ReturnsAsync(mockPlayer);
 
             var service = new RegisterPlayerRequestHandler(mockContext.Object);
 
@@ -38,9 +38,9 @@ namespace HighLowGame.UnitTest
                 Username = "Test",
             };
 
-            await service.Handle(mockRequest, CancellationToken.None);
+            var result = await service.Handle(mockRequest, CancellationToken.None);
 
-            mockContext.Verify(m => m.AddAsync(mockPlayer, It.IsAny<CancellationToken>()), Times.Once());
+            Assert.AreEqual(result.PlayerId, mockPlayer.Id);
         }
     }
 }
